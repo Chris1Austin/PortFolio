@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/contact.mjs": {
-      "maxDuration": 10
-    }
-  }
-}

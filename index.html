@@ -152,13 +152,22 @@
         <div class="contact-layout">
           <div class="reveal"><h2>Let’s build something <em>useful.</em></h2><p class="contact-intro">Have an opportunity, idea, or question? Use the form, or contact me directly through email or GitHub.</p><a class="email-link" href="mailto:tekjunhong@gmail.com">tekjunhong@gmail.com <span>↗</span></a><a class="github-link" href="https://github.com/Chris1Austin" target="_blank" rel="noreferrer"><span class="github-mark" aria-hidden="true">⌘</span> View my GitHub <span>↗</span></a></div>
           <!-- CHANGE: Update your email and GitHub URL above. The form recipient is set in Vercel's CONTACT_EMAIL variable. -->
-          <form class="contact-form reveal" id="contact-form" novalidate>
-            <div class="form-row"><label for="name">Your name<input id="name" name="name" type="text" autocomplete="name" required maxlength="100" /></label><label for="email">Email address<input id="email" name="email" type="email" autocomplete="email" required maxlength="200" /></label></div>
-            <label for="subject">Subject<input id="subject" name="subject" type="text" required maxlength="150" placeholder="How can I help?" /></label>
-            <label for="message">Message<textarea id="message" name="message" required maxlength="5000" placeholder="Tell me a little about your opportunity or question."></textarea></label>
-            <label class="honeypot" for="website">Website<input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></label>
-            <button class="button button-solid form-submit" type="submit">Send message <span aria-hidden="true">↗</span></button><p class="form-status" id="form-status" aria-live="polite"></p>
-          </form>
+          <form action="https://formspree.io/f/xjgnevpg" method="POST">
+            
+            <!-- Added name="name" -->
+            <input type="text" name="name" placeholder="YOUR NAME" required>
+            
+            <!-- Added name="email" -->
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
+            
+            <!-- Added name="subject" -->
+            <input type="text" name="subject" placeholder="How can I help?">
+            
+            <!-- Added name="message" -->
+            <textarea name="message" placeholder="Tell me a little about your opportunity or question." required></textarea>
+            
+            <button type="submit">Send message</button>
+        </form>
         </div>
         <footer class="site-footer reveal"><span>© <span id="year">2026</span> <strong>Tek Jun Hong</strong>. All rights reserved.</span><span>Designed & coded by <strong>TEK JUN HONG</strong></span></footer>
       </section>

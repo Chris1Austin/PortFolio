@@ -85,3 +85,33 @@ form.addEventListener('submit', async (event) => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+document.querySelector('form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent default page refresh
+
+    // Gather the data
+    const formData = {
+        name: document.querySelector('input[placeholder="YOUR NAME"]').value,
+        email: document.querySelector('input[placeholder="EMAIL ADDRESS"]').value,
+        subject: document.querySelector('input[placeholder="How can I help?"]').value,
+        message: document.querySelector('textarea').value
+    };
+
+    // Send to your Vercel backend
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            alert('Message sent successfully!');
+            e.target.reset(); // Clear the form
+        } else {
+            alert('Failed to send message.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
